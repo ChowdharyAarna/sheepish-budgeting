@@ -24,7 +24,7 @@ const BudgetDashboard = () => {
   ]);
 
   const [state, setState] = useState({
-    userId: "shluck",
+    user_id: "shluck",
     budget: 3000,
     spent: 850,
     transactions: [
@@ -234,7 +234,10 @@ const BudgetDashboard = () => {
           <Button className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white">
             <PlusCircle className="h-4 w-4" /> Add Expense
           </Button>
-          <Button variant="outline" className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white">
+          <Button
+            variant="outline"
+            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white"
+          >
             <BarChart3 className="h-4 w-4" /> Analytics
           </Button>
           <Button

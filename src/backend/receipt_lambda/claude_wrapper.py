@@ -12,7 +12,7 @@ class ClaudeWrapper:
         Args:
             api_key: Your Anthropic API key. If None, will look for ANTHROPIC_API_KEY env var
         """
-        self.api_key = api_key or os.getenv('ANTHROPIC_API_KEY_1')
+        self.api_key = api_key or os.getenv('ANTHROPIC_API_KEY')
         if not self.api_key:
             raise ValueError("API key required. Set ANTHROPIC_API_KEY env var or pass api_key parameter")
         
