@@ -1,1 +1,60 @@
-"```json\n{\n  \"vendor\": \"Square Lotus\",\n  \"items\": [\n    {\"name\": \"Tofu Fried Rice\", \"cost\": 16.00},\n    {\"name\": \"Tofu Fried Rice\", \"cost\": 16.00},\n    {\"name\": \"Red Curry with Tofu\", \"cost\": 16.00},\n    {\"name\": \"Red Curry with Tofu\", \"cost\": 16.00},\n    {\"name\": \"Vietnamese Rice Noodle with Chicken\", \"cost\": 16.00},\n    {\"name\": \"Chicken Fried Rice\", \"cost\": 16.00},\n    {\"name\": \"Green Curry with Chicken\", \"cost\": 16.00},\n    {\"name\": \"Italian Soda\", \"cost\": 5.00},\n    {\"name\": \"Iced Coffee\", \"cost\": 7.00},\n    {\"name\": \"Extra Rice\", \"cost\": 2.00}\n  ],\n  \"subtotal\": 126.00,\n  \"tax\": 12.86,\n  \"tip\": 22.68,\n  \"total\": 161.54\n}\n```"
+{
+    "date": "2024-06-01",
+    "vendor": "Square Lotus",
+    "items": [
+        {
+            "name": "Tofu Fried Rice",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Tofu Fried Rice",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Red Curry Tofu",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Red Curry Tofu",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Vietnamese Rice Noodle Chicken",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Chicken Fried Rice",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Green Curry Chicken",
+            "cost": 16.0,
+            "category": "Other"
+        },
+        {
+            "name": "Italian Soda",
+            "cost": 5.0,
+            "category": "Other"
+        },
+        {
+            "name": "Iced Coffee",
+            "cost": 7.0,
+            "category": "Other"
+        },
+        {
+            "name": "Extra Rice",
+            "cost": 2.0,
+            "category": "Other"
+        }
+    ],
+    "subtotal": 126.0,
+    "taxes": 12.86,
+    "fees": 22.68,
+    "total": 161.54
+}

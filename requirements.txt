@@ -20,5 +20,3 @@ react >= 4.3.0
 
 # Anthropic
 anthropic >= 0.67.0
-
-# environemnt

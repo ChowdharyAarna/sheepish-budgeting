@@ -1,1 +1,45 @@
-"```json\n{\n  \"vendor\": \"Trader Joe's\",\n  \"items\": [\n    {\n      \"name\": \"World's Puffiest White Cheddar Corn Puffs\",\n      \"cost\": \"$2.49\"\n    },\n    {\n      \"name\": \"Grass Green Seedless Grapes\",\n      \"cost\": \"$5.49\"\n    },\n    {\n      \"name\": \"Greek Yogurt with Strawberry and Banana (6 pack)\",\n      \"cost\": \"$7.99\"\n    },\n    {\n      \"name\": \"Reduced Sodium Soy Sauce\",\n      \"cost\": \"$3.79\"\n    },\n    {\n      \"name\": \"Granola Clusters with Maple and Pecan\",\n      \"cost\": \"$3.79\"\n    },\n    {\n      \"name\": \"Spicy Red Chili Pepper Grinder\",\n      \"cost\": \"$1.99\"\n    },\n    {\n      \"name\": \"Firm Organic Tofu 14 oz\",\n      \"cost\": \"$1.99\"\n    }\n  ],\n  \"subtotal\": \"$27.52\",\n  \"taxes\": \"$0.00\",\n  \"other_fees\": \"$0.00\",\n  \"total\": \"$27.52\"\n}\n```"
+{
+    "vendor": "Trader Joe's",
+    "date": "2024-09-07",
+    "items": [
+        {
+            "name": "World's Puffiest White Cheddar Corn Puffs",
+            "cost": 2.49,
+            "category": "Other"
+        },
+        {
+            "name": "Grapes Green Seedless",
+            "cost": 5.49,
+            "category": "Other"
+        },
+        {
+            "name": "Greek Yogurt Strawberry Banana 6 Pack",
+            "cost": 7.99,
+            "category": "Other"
+        },
+        {
+            "name": "Soy Sauce Reduced Sodium",
+            "cost": 3.79,
+            "category": "Other"
+        },
+        {
+            "name": "Granola Clusters Maple Pecan",
+            "cost": 3.79,
+            "category": "Other"
+        },
+        {
+            "name": "Spicy Red Chili Pepper Oil",
+            "cost": 1.99,
+            "category": "Other"
+        },
+        {
+            "name": "Tofu Firm Organic 14 oz",
+            "cost": 1.99,
+            "category": "Other"
+        }
+    ],
+    "subtotal": 27.52,
+    "taxes": 0.0,
+    "fees": 0.0,
+    "total": 27.52
+}

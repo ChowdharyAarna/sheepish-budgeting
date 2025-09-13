@@ -1,1 +1,35 @@
-"```json\n{\n  \"vendor\": \"Monkeypod Kitchen by Merriman\",\n  \"items\": [\n    {\n      \"name\": \"Virgin Mai Tai\",\n      \"cost\": 10.00\n    },\n    {\n      \"name\": \"Kalua Pork Pizza\",\n      \"cost\": 23.00\n    },\n    {\n      \"name\": \"Margherita Pizza\",\n      \"cost\": 21.00\n    },\n    {\n      \"name\": \"Wild Mushroom Pizza\",\n      \"cost\": 23.00\n    },\n    {\n      \"name\": \"Saimin\",\n      \"cost\": 23.00\n    }\n  ],\n  \"subtotal\": 100.00,\n  \"taxes\": 4.88,\n  \"other_fees\": [\n    {\n      \"name\": \"4% Kitchen\",\n      \"amount\": 3.60\n    }\n  ],\n  \"total\": 108.48\n}\n```"
+{
+  "vendor": "Monkeypod Kitchen by Merriman",
+  "date": "2024-06-17",
+  "items": [
+    {
+      "name": "Virgin Mai Tai",
+      "cost": 10.0,
+      "category": "Other"
+    },
+    {
+      "name": "Kalua Pork Pizza",
+      "cost": 23.0,
+      "category": "Other"
+    },
+    {
+      "name": "Margherita Pizza",
+      "cost": 21.0,
+      "category": "Other"
+    },
+    {
+      "name": "Wild Mushroom Pizza",
+      "cost": 23.0,
+      "category": "Other"
+    },
+    {
+      "name": "Saimin",
+      "cost": 23.0,
+      "category": "Other"
+    }
+  ],
+  "subtotal": 100.0,
+  "taxes": 4.88,
+  "fees": 3.6,
+  "total": 108.48
+}

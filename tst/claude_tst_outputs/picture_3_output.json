@@ -1,1 +1,20 @@
-"```json\n{\n  \"vendor\": \"Costco Wholesale\",\n  \"items\": [\n    {\n      \"name\": \"Whole Cheese\",\n      \"quantity\": 32,\n      \"unit_price\": 9.95,\n      \"total\": 318.40\n    },\n    {\n      \"name\": \"Whole Pepperoni\",\n      \"quantity\": 10,\n      \"unit_price\": 9.95,\n      \"total\": 99.50\n    }\n  ],\n  \"subtotal\": 417.90,\n  \"tax\": 43.04,\n  \"other_fees\": 0.00,\n  \"total\": 460.94\n}\n```"
+{
+    "vendor": "Costco Wholesale",
+    "date": "2024-05-18",
+    "items": [
+        {
+            "name": "Whole Cheese",
+            "cost": 318.4,
+            "category": "Other"
+        },
+        {
+            "name": "Whole Pepperoni",
+            "cost": 99.5,
+            "category": "Other"
+        }
+    ],
+    "subtotal": 417.9,
+    "taxes": 43.04,
+    "fees": 0.0,
+    "total": 460.94
+}

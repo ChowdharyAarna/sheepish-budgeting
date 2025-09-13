@@ -134,28 +134,51 @@ class ClaudeWrapper:
         
         return media_type, base64_data
 
-    def read_receipt(self, image_input: Union[str, bytes], max_tokens: int = 4096) -> str:
+    def read_receipt(self, base64_input: str, categories: list = [], max_tokens: int = 4096) -> str:
         """
-        Process a receipt image and extract itemized information
+        Process a receipt image (as base64 string) and extract itemized information.
         
         Args:
-            image_input: Either a file path (str) or image bytes
-            max_tokens: Maximum tokens in response
+            base64_input: A base64-encoded image string (e.g., from mobile app or API).
+            max_tokens: Maximum tokens in response.
             
         Returns:
-            JSON string with receipt data or 'None' if not a receipt
+            JSON string with receipt data (with categories added) or 'None' if not a receipt.
         """
-        # Handle different input types
-        if isinstance(image_input, str):
-            # Assume it's a file path
-            media_type, base64_data = self._encode_image(image_input)
-        elif isinstance(image_input, bytes):
-            # Assume it's JPEG bytes (most common for mobile apps)
-            media_type = 'image/jpeg'
-            base64_data = base64.b64encode(image_input).decode('utf-8')
-        else:
-            raise ValueError("image_input must be either a file path (str) or image bytes")
+
+        # Assume base64 input is always JPEG unless otherwise specified
+        media_type = "image/jpeg"
         
+        system_prompt = f'''
+        Given this receipt, follow the rules below to generate a json string (do NOT include json in the beginning of the string)
+        
+        Follow these rules:
+        1. Get the item and its cost, subtotal, taxes, other fees, and total
+        2. If the name of the item is unclear/not a well known item, look up what it is and use that name.
+        3. Do NOT give a description of the item or the payment method.
+        4. Include the vendor name.
+        5. Include the date of the transaction, if not visible use today's date
+
+        Also Follow these Category rules:
+        - Add categories to each item
+        - The available categories are {categories}, Do not invent new categories.
+        - If there it does not match one of the categories, put it in "Other"
+
+        If the image is not a receipt, simply return the string "None" and NOTHING ELSE
+        ''' + '''\
+        The outputted json string should follow a format like this:
+        {
+        "date": "2025-09-13",
+        "items": [
+            {"name": "Coffee", "cost": 3.50, "category": "Food"},
+            {"name": "Notebook", "cost": 5.00, "category": "Stationary"}
+        ],
+         "subtotal": 8.50,
+         "taxes": 0.50,
+         "fees" : 0.00,
+         "total": 9.00
+        }
+        '''
         # Create message with image
         messages = [{
             "role": "user",
@@ -165,17 +188,12 @@ class ClaudeWrapper:
                     "source": {
                         "type": "base64",
                         "media_type": media_type,
-                        "data": base64_data
+                        "data": base64_input
                     }
                 },
                 {
                     "type": "text",
-                    "text": """Given this receipt, give a list of each item and cost, subtotal, taxes, other fees, and total.
-                        If the name of the item is unclear/not a well known item, look up what it is and use that name.
-                        Do NOT give a description of the item or the payment method.
-                        Also include the vendor name.
-                        Give this information in a json string.
-                        If the image is not a receipt, simply return the string 'None'."""
+                    "text": system_prompt
                 }
             ]
         }]
@@ -183,26 +201,6 @@ class ClaudeWrapper:
         response = self.client.messages.create(
             model=self.model,
             max_tokens=max_tokens,
-            messages=messages
-        )
-        
-        return response.content[0].text
-    
-    async def async_chat(self,
-                        message: str,
-                        max_tokens: int = 4096,
-                        temperature: float = 0.7,
-                        system: Optional[str] = None) -> str:
-        """
-        Async version of chat
-        """
-        messages = [{"role": "user", "content": message}]
-        
-        response = await self.async_client.messages.create(
-            model=self.model,
-            max_tokens=max_tokens,
-            temperature=temperature,
-            system=system,
             messages=messages
         )
         
