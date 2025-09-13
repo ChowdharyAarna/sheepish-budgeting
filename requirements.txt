@@ -1,0 +1,24 @@
+# # Core ML and Image Processing
+# numpy>=1.24.0
+# Pillow>=9.0.0
+# tensorflow-cpu>=2.10.0
+# opencv-python-headless>=4.7.0
+
+# # Streamlit Web App
+# streamlit>=1.28.0
+# streamlit-drawable-canvas>=0.9.0
+
+# # Data Analysis and Visualization
+# pandas>=1.5.0
+# plotly>=5.15.0
+
+# Flask
+flask >= 3.1.0
+
+# React
+react >= 4.3.0
+
+# Anthropic
+anthropic >= 0.67.0
+
+# environemnt
